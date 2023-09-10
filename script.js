@@ -131,15 +131,12 @@ document.getElementById('themeSelector').addEventListener('change', function () 
 });
 
 backgroundVolumeControl.addEventListener('input', () => {
-    backgroundAudio1.volume = backgroundVolumeControl.value;
-    backgroundAudio2.volume = backgroundVolumeControl.value;
-    backgroundAudio3.volume = backgroundVolumeControl.value;
+    soundBackground.volume = backgroundVolumeControl.value;
     // Adicione mais áudios conforme necessário
 });
 
 overlayVolumeControl.addEventListener('input', () => {
-    overlayAudio1.volume = overlayVolumeControl.value;
-    overlayAudio2.volume = overlayVolumeControl.value;
-    overlayAudio3.volume = overlayVolumeControl.value;
+    soundEffects.volume = overlayVolumeControl.value;
+    soundMusic.volume = overlayVolumeControl.value;
     // Adicione mais áudios conforme necessário
 });
