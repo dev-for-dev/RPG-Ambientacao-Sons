@@ -12,8 +12,8 @@ let backgroundButtons = document.querySelectorAll('.background-button');
 let musicButtons = document.querySelectorAll('.music-button');
 let effectsButtons = document.querySelectorAll('.effects-button');
 
-let atual = 0; 
-let atualM = 0; 
+let atual = 0;
+let atualM = 0;
 let atualE = 0;
 
 backgroundButtons.forEach(button => {
@@ -47,6 +47,13 @@ musicButtons.forEach(button => {
         });
     });
 });
+
+function toggleTheme(theme) {
+    const body = document.body;
+    body.classList.remove('light', 'dark');
+    body.classList.add(theme);
+}
+
 function toggleTextColor(button) {
     if (button.style.color === 'red') {
         button.style.color = 'white';
@@ -117,6 +124,11 @@ function playEffects(effect, button) {
         soundEffects.play();
     }
 }
+
+document.getElementById('themeSelector').addEventListener('change', function () {
+    const selectedTheme = this.value;
+    toggleTheme(selectedTheme);
+});
 
 backgroundVolumeControl.addEventListener('input', () => {
     backgroundAudio1.volume = backgroundVolumeControl.value;
